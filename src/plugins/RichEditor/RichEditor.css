@@ -1,0 +1,79 @@
+.richeditor-root {
+  background: #fff;
+}
+
+.richeditor-editor {
+  cursor: text;
+  font-size: 1rem;
+  min-height: 25px;
+  display: block;
+  word-break: break-all;
+}
+
+.richeditor-editor .public-DraftEditorPlaceholder-root {
+  font-size: .8rem;
+  color: #999;
+  margin: 0 -15px -25px;
+  padding: 0 22px 0px;
+}
+
+.richeditor-editor .public-DraftEditor-content {
+  padding: 0 7px 0px;
+}
+
+.richeditor-hidePlaceholder .public-DraftEditorPlaceholder-root {
+  display: none;
+}
+
+.richeditor-hideControls {
+  opacity: 0;
+  transition: all .25s ease-in-out;
+  margin-bottom: 15px;
+}
+
+.richeditor-showControls {
+  opacity: 1;
+  transition: all .25s ease-in-out;
+  margin-bottom: 15px;
+}
+
+.richeditor-editor .richeditor-blockquote {
+  border-left: 4px solid #C15757;
+  color: #666;
+  font-family: 'Hoefler Text', 'Georgia', serif;
+  font-style: italic;
+  margin: 16px 0;
+  padding: 10px 15x;
+}
+
+
+.richeditor-editor .public-DraftStyleDefault-pre {
+  background-color: rgba(0, 0, 0, 0.05);
+  font-family: 'Inconsolata', 'Menlo', 'Consolas', monospace;
+  padding: 20px;
+}
+
+.richeditor-controls {
+  font-size: .8rem;
+  user-select: none;
+}
+
+.richeditor-styleButton {
+  font-size: .8rem;
+}
+
+.richeditor-activeButton {
+  color: #5890ff;
+}
+
+.richeditor-left-align-block{
+  text-align: left;
+}
+
+.richeditor-center-align-block{
+  text-align: center;
+}
+
+.richeditor-right-align-block{
+  text-align: right;
+}
