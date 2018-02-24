@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import RichEditor from './plugins/RichEditor';
-import { EditorState, ContentState, convertFromHTML } from 'draft-js';
+import { EditorState } from 'draft-js';
 import { stateToHTML } from 'draft-js-export-html';
 import Parser from 'html-react-parser';
 
@@ -55,19 +54,13 @@ const optionForHTMLExport = {
   },
   blockRenderers:{
     'align-left': (block) => {
-      let data = block.getData();
-      console.log("The block is", block.getText());
-      return '<div className="left-align-block">' + block.getText() + '</div>';
+      return `<div className="left-align-block">  ${block.getText()} </div>`;
     },
     'align-center': (block) => {
-      let data = block.getData();
-      console.log("The block is", block.getText());
-      return '<div className="center-align-block">' + block.getText() + '</div>';
+      return `<div className="center-align-block"> ${block.getText()} </div>`;
     },
     'align-right': (block) => {
-      let data = block.getData();
-      console.log("The block is", block.getText());
-      return '<div className="right-align-block">' + block.getText() + '</div>';
+      return `<div className="right-align-block"> ${block.getText()} </div>`;
     }
   }
 }
@@ -100,9 +93,7 @@ class App extends Component {
   }
 
   render() {
-    const { resetEditorState, updateEditorState, parseText, editorState } = this.state;
-    const currentInlineStyle = editorState.getCurrentInlineStyle();
-    // console.log("The current inline style is", currentInlineStyle.toJS());
+    const { resetEditorState, updateEditorState, parseText } = this.state;
     return (
       <div className="App">
         <h2>My Wziwig editor:</h2>

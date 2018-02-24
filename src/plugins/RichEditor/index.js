@@ -5,10 +5,8 @@ import BlockStyleControls from './BlockStyleControls';
 import InlineStyleControls from './InlineStyleControls';
 import { isUndefined } from 'lodash';
 import Link from './Link';
-import { Editor, EditorState, ContentState, RichUtils, CompositeDecorator, DefaultDraftBlockRenderMap } from 'draft-js';
+import { Editor, EditorState, ContentState, RichUtils, CompositeDecorator } from 'draft-js';
 import { Popover, PopoverContent } from 'reactstrap';
-import AlignComponent from './AlignComponent';
-import Immutable from 'immutable';
 
 const uniqueId = () => Math.random().toString(36).substr(2, 16);
 
@@ -33,14 +31,6 @@ const styles = {
     border: 0
   }
 };
-
-const blockRenderMap = Immutable.Map({
-  'align-left': {
-    element: AlignComponent
-  }
-});
-
-const extendedBlockRenderMap = DefaultDraftBlockRenderMap.merge(blockRenderMap);
 
 class RichEditor extends Component {
 
@@ -314,7 +304,6 @@ class RichEditor extends Component {
         <div className={editorClassName} onClick={this.focus}>
           <Editor
             blockStyleFn={getBlockStyle}
-            // blockRenderMap={extendedBlockRenderMap}
             customStyleMap={styleMap}
             editorState={editorState}
             handleKeyCommand={this.handleKeyCommand}
